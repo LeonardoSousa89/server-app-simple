@@ -8,5 +8,7 @@ CREATE TABLE IF NOT EXISTS test(
 );
 DROP TABLE test;
 
+SELECT * FROM test;
+
 \q
 
