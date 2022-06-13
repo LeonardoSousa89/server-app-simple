@@ -13,6 +13,9 @@ route.route('/add-msg').post((req, res)=>{
 route.route('/upt-msg/:id').put((req, res)=>{
     service.put(data.idRequest(req),res,data.bodyRequest(req))
 })
+route.route('/rmv-msg/:id').delete((req, res)=>{
+    service.remove(data.idRequest(req),res)
+})
 
 
 module.exports = route
