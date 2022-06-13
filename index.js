@@ -13,4 +13,4 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 app.use('/', route)
-app.listen(_Port)
+app.listen(process.env.PORT || _Port)
