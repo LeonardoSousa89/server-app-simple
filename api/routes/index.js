@@ -9,6 +9,10 @@ route.route('/').get((req, res)=>{
 })
 route.route('/add-msg').post((req, res)=>{
     service.post(res, data.bodyRequest(req))
- })
+})
+route.route('/upt-msg/:id').put((req, res)=>{
+    service.put(data.idRequest(req),res,data.bodyRequest(req))
+})
+
 
 module.exports = route

@@ -4,4 +4,10 @@ function bodyRequest(req){
     return data
 }
 
-module.exports = { bodyRequest }
+function idRequest(req){
+    data = { id : req.params.id }
+
+    return data
+}
+
+module.exports = { bodyRequest, idRequest}

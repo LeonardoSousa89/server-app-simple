@@ -12,14 +12,20 @@ async function get(res){
 async function post(res,data){
     const db = await knex.insert(data)
          .table('test')
-         .then(response => res.status(200).json(response))
+         .then(response => res.status(201).json(response))
          .catch(err     => res.status(400).send(err))
 
     return db
 }
 
-function put(id, data){
-    return data
+async function put(id,res,data){
+    const db = await knex.where(id)
+         .update(data)
+         .table('test')
+         .then(response => res.status(201).json(response))
+         .catch(err     => res.status(404).send(err))
+
+    return db
 }
 
 function remove(id){
