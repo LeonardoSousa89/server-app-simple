@@ -4,7 +4,8 @@ DROP DATABASE cors_test;
 \c cors_test
 
 CREATE TABLE IF NOT EXISTS test(
-    msg SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
+    msg VARCHAR(100)
 );
 DROP TABLE test;
 
