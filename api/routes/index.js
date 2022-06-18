@@ -7,6 +7,9 @@ const data    = require('../../db/data')
 route.route('/').get((req, res)=>{
    service.get(res)
 })
+route.route('/:id').get((req, res)=>{
+   service.getById(data.idRequest(req),res)
+})
 route.route('/add-msg').post((req, res)=>{
     service.post(res, data.bodyRequest(req))
 })
@@ -16,6 +19,7 @@ route.route('/upt-msg/:id').put((req, res)=>{
 route.route('/rmv-msg/:id').delete((req, res)=>{
     service.remove(data.idRequest(req),res)
 })
+
 
 
 module.exports = route
